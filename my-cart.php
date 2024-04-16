@@ -127,8 +127,8 @@ if (isset($_POST['ordersubmit'])) {
 															<a href="index.php"
 																class="btn btn-upper btn-upper outer-left-xs">Continue
 																Shopping</a>
-																<a href="http://localhost/shopping/checkout.php"
-    class="btn btn-upper btn-primary">Proceed to Checkout</a>
+															<a href="http://localhost/shopping/checkout.php"
+																class="btn btn-upper btn-primary">Proceed to Checkout</a>
 
 															<input type="submit" name="submit" value="Update shopping cart"
 																class="btn btn-upper btn-primary pull-right outer-right-xs">
@@ -219,7 +219,6 @@ if (isset($_POST['ordersubmit'])) {
 									echo "Your shopping Cart is empty";
 								} ?>
 							</form>
-							<?php echo include ('includes/brands-slider.php'); ?>
 						</div>
 					</div><!-- /.shopping-cart-table -->
 				</div>

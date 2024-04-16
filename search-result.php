@@ -161,7 +161,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 					</div><!-- /.col -->
 				</div>
 			</div>
-			<?php include ('includes/brands-slider.php'); ?>
 
 		</div>
 	</div>

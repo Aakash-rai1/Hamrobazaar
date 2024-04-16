@@ -36,7 +36,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 	<meta name="keywords" content="MediaCenter, Template, eCommerce">
 	<meta name="robots" content="all">
 
-	<title>asghjaSGHJK</title>
+	<title>Checkout</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -124,23 +124,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
 
-
-
-	<script src="switchstylesheet/switchstylesheet.js"></script>
-
-	<script>
-		$(document).ready(function () {
-			$(".changecolor").switchstylesheet({ seperator: "color" });
-			$('.show-theme-options').click(function () {
-				$(this).parent().toggleClass('open');
-				return false;
-			});
-		});
-
-		$(window).bind("load", function () {
-			$('.show-theme-options').delay(2000).trigger('click');
-		});
-	
 
 	
 
