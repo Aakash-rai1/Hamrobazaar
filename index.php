@@ -146,8 +146,8 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 															<a
 																href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>">
 																<div style="width: 100%; height: 300px; overflow: hidden;">
-																	<img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
-																		data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																	<img src="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																		data-echo="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
 																		style="width: 100%; height: 100%; object-fit: cover;"
 																		alt="img">
 																</div>
@@ -202,8 +202,8 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 														<div class="image">
 															<a
 																href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>">
-																<img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
-																	data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																<img src="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																	data-echo="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
 																	width="180" height="300" alt=""></a>
 														</div><!-- /.image -->
 
@@ -267,8 +267,8 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 														<div class="image">
 															<a
 																href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>">
-																<img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
-																	data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																<img src="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																	data-echo="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
 																	width="180" height="300" alt=""></a>
 														</div>
 

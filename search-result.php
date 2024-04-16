@@ -115,7 +115,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 																	<a
 																		href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img
 																			src="assets/images/blank.gif"
-																			data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
+																			data-echo="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
 																			alt="" width="200" height="300"></a>
 																</div><!-- /.image -->
 															</div><!-- /.product-image -->
