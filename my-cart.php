@@ -161,7 +161,7 @@ if (isset($_POST['ordersubmit'])) {
 																value="<?php echo htmlentities($row['id']); ?>" /></td>
 														<td class="cart-image">
 															<a class="entry-thumbnail" href="detail.html">
-																<img src="admin/productimages/<?php echo $row['id']; ?>/<?php echo $row['productImage1']; ?>"
+																<img src="assets/productimages/<?php echo $row['id']; ?>/<?php echo $row['productImage1']; ?>"
 																	alt="" width="114" height="146">
 															</a>
 														</td>

@@ -94,7 +94,7 @@ if (isset($_Get['action'])) {
 												<div class="col-xs-4">
 													<div class="image">
 														<a href="product-details.php?pid=<?php echo $row['id']; ?>"><img
-																src="admin/productimages/<?php echo $row['id']; ?>/<?php echo $row['productImage1']; ?>"
+																src="assets/productimages/<?php echo $row['id']; ?>/<?php echo $row['productImage1']; ?>"
 																width="35" height="50" alt=""></a>
 													</div>
 												</div>
