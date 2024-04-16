@@ -127,7 +127,7 @@ if (isset($_POST['ordersubmit'])) {
 															<a href="index.php"
 																class="btn btn-upper btn-upper outer-left-xs">Continue
 																Shopping</a>
-																<a href="http://localhost/shopping/category.php"
+																<a href="http://localhost/shopping/checkout.php"
     class="btn btn-upper btn-primary">Proceed to Checkout</a>
 
 															<input type="submit" name="submit" value="Update shopping cart"
