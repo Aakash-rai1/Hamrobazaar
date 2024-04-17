@@ -25,7 +25,7 @@
                                     <a href="category.php?cid=<?php echo $row['id']; ?>"><?php echo $row['categoryName']; ?></a>
                                 </li>
                             <?php } ?>
-                        </ul><!-- /.navbar-nav -->
+                        </ul>
                         <div class="clearfix"></div>
                     </div>
                 </div>

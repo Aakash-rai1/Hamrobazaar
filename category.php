@@ -52,7 +52,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 	<link rel="stylesheet" href="assets/css/rateit.css">
 	<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-
 	<link rel="stylesheet" href="assets/css/config.css">
 
 	<link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
@@ -60,8 +59,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 	<link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
 	<link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
 	<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
-
-
 
 	<!-- Icons/Glyphs -->
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -77,23 +74,17 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 <body class="cnt-home">
 
 	<header class="header-style-1">
-
-		<!-- ============================================== TOP MENU ============================================== -->
 		<?php include ('includes/top-header.php'); ?>
-		<!-- ============================================== TOP MENU : END ============================================== -->
 		<?php include ('includes/main-header.php'); ?>
-		<!-- ============================================== NAVBAR ============================================== -->
 		<?php include ('includes/menu-bar.php'); ?>
-		<!-- ============================================== NAVBAR : END ============================================== -->
+
 
 	</header>
-	<!-- ============================================== HEADER : END ============================================== -->
 	</div><!-- /.breadcrumb -->
 	<div class="body-content outer-top-xs">
 		<div class='container'>
 			<div class='row outer-bottom-sm'>
 				<div class='col-md-3 sidebar'>
-					<!-- ================================== TOP NAVIGATION ================================== -->
 					<div class="side-menu animate-dropdown outer-bottom-xs">
 						<div class="side-menu animate-dropdown outer-bottom-xs">
 							<div class="head"><i class="icon fa fa-align-justify fa-fw"></i>Sub Categories</div>
@@ -115,11 +106,9 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 							</nav>
 						</div>
 					</div><!-- /.side-menu -->
-					<!-- ================================== TOP NAVIGATION : END ================================== -->
 					<div class="sidebar-module-container">
 						<h3 class="section-title">shop by</h3>
 						<div class="sidebar-filter">
-							<!-- ============================================== SIDEBAR CATEGORY ============================================== -->
 							<div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
 								<div class="widget-header m-t-20">
 									<h4 class="widget-title">Category</h4>
@@ -200,13 +189,8 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 										<?php } ?>
 									</div><!-- /.row -->
 								</div><!-- /.category-product -->
-
 							</div><!-- /.tab-pane -->
-
-
-
 						</div><!-- /.search-result-container -->
-
 					</div><!-- /.col -->
 				</div>
 			</div>

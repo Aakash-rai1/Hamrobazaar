@@ -68,31 +68,21 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 </head>
 
 <body class="cnt-home">
-
-
-
-	<!-- ============================================== HEADER ============================================== -->
 	<header class="header-style-1">
 		<?php include ('includes/top-header.php'); ?>
 		<?php include ('includes/main-header.php'); ?>
 		<?php include ('includes/menu-bar.php'); ?>
 	</header>
 
-	<!-- ============================================== HEADER : END ============================================== -->
 	<div class="body-content outer-top-xs" id="top-banner-and-menu">
 		<div class="container">
 			<div class="furniture-container homepage-container">
 				<div class="row">
-
 					<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
-						<!-- ================================== TOP NAVIGATION ================================== -->
 						<?php include ('includes/side-menu.php'); ?>
-						<!-- ================================== TOP NAVIGATION : END ================================== -->
 					</div><!-- /.sidemenu-holder -->
 
 					<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
-						<!-- ========================================== SECTION – HERO ========================================= -->
-
 						<div id="hero" class="homepage-slider3">
 							<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 								<div class="full-width-slider">
@@ -109,16 +99,10 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 
 							</div><!-- /.owl-carousel -->
 						</div>
-
-						<!-- ========================================= SECTION – HERO : END ========================================= -->
-						<!-- ============================================== INFO BOXES ============================================== -->
-
-						<!-- ============================================== INFO BOXES : END ============================================== -->
 					</div><!-- /.homebanner-holder -->
 
 				</div><!-- /.row -->
 
-				<!-- ============================================== SCROLL TABS ============================================== -->
 				<div id="product-tabs-slider" class="scroll-tabs inner-bottom-vs  wow fadeInUp">
 					<div class="more-info-tab clearfix">
 						<h3 class="new-product-title pull-left">Featured Products</h3>
@@ -179,21 +163,13 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 							</div><!-- /.product-slider -->
 						</div>
 
-
-
-
 						<div class="tab-pane" id="books">
 							<div class="product-slider">
 								<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
 									<?php
 									$ret = mysqli_query($con, "select * from products where category=3");
 									while ($row = mysqli_fetch_array($ret)) {
-										# code...
-									
-
 										?>
-
-
 										<div class="item item-carousel">
 											<div class="products">
 
@@ -239,16 +215,9 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 											</div><!-- /.products -->
 										</div><!-- /.item -->
 									<?php } ?>
-
-
 								</div><!-- /.home-owl-carousel -->
 							</div><!-- /.product-slider -->
 						</div>
-
-
-
-
-
 
 						<div class="tab-pane" id="furniture">
 							<div class="product-slider">
@@ -257,11 +226,8 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 									$ret = mysqli_query($con, "select * from products where category=5");
 									while ($row = mysqli_fetch_array($ret)) {
 										?>
-
-
 										<div class="item item-carousel">
 											<div class="products">
-
 												<div class="product">
 													<div class="product-image">
 														<div class="image">
@@ -271,10 +237,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 																	data-echo="assets/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>"
 																	width="180" height="300" alt=""></a>
 														</div>
-
-
 													</div>
-
 
 													<div class="product-info text-left">
 														<h3 class="name"><a
@@ -317,12 +280,9 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 		<?php include ('includes/footer.php'); ?>
 
 		<script src="assets/js/jquery-1.11.1.min.js"></script>
-
 		<script src="assets/js/bootstrap.min.js"></script>
-
 		<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
 		<script src="assets/js/owl.carousel.min.js"></script>
-
 		<script src="assets/js/echo.min.js"></script>
 		<script src="assets/js/jquery.easing-1.3.min.js"></script>
 		<script src="assets/js/bootstrap-slider.min.js"></script>

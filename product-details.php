@@ -302,24 +302,6 @@ if (isset($_POST['submit'])) {
 									</div><!-- /.price-container -->
 									<div class="quantity-container info-container">
 										<div class="row">
-
-											<div class="col-sm-2">
-												<span class="label">Qty :</span>
-											</div>
-
-											<div class="col-sm-2">
-												<div class="cart-quantity">
-													<div class="quant-input">
-														<div class="arrows">
-															<div class="arrow plus gradient"><span class="ir"><i
-																		class="icon fa fa-sort-asc"></i></span></div>
-															<div class="arrow minus gradient"><span class="ir"><i
-																		class="icon fa fa-sort-desc"></i></span></div>
-														</div>
-														<input type="text" value="1">
-													</div>
-												</div>
-											</div>
 											<div class="col-sm-7">
 												<?php if ($row['productAvailability'] == 'In Stock') { ?>
 													<a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>"
