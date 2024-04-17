@@ -36,7 +36,7 @@ if (isset($_POST['ordersubmit'])) {
 		$value = array_combine($pdd, $quantity);
 		foreach ($value as $qty => $val34) {
 			mysqli_query($con, "insert into orders(userId,productId,quantity) values('" . $_SESSION['id'] . "','$qty','$val34')");
-			header('location:payment-method.php');
+			header('location:checkout.php');
 		}
 	}
 }
@@ -107,114 +107,137 @@ if (isset($_POST['ordersubmit'])) {
 								<?php
 								if (!empty($_SESSION['cart'])) {
 									?>
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th class="cart-romove item">Remove</th>
-												<th class="cart-description item">Image</th>
-												<th class="cart-product-name item">Product Name</th>
-												<th class="cart-qty item">Quantity</th>
-												<th class="cart-sub-total item">Price Per unit</th>
-												<th class="cart-sub-total item">Shipping Charge</th>
-												<th class="cart-total last-item">Grandtotal</th>
-											</tr>
-										</thead><!-- /thead -->
-										<tfoot>
-											<tr>
-												<td colspan="7">
-													<div class="shopping-cart-btn">
-														<span class="">
-															<a href="index.php"
-																class="btn btn-upper btn-upper outer-left-xs">Continue
-																Shopping</a>
-															<a href="checkout.php"
-																class="btn btn-upper btn-primary">Proceed to Checkout</a>
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th class="cart-romove item">Remove</th>
+													<th class="cart-description item">Image</th>
+													<th class="cart-product-name item">Product Name</th>
+													<th class="cart-qty item">Quantity</th>
+													<th class="cart-sub-total item">Price Per unit</th>
+													<th class="cart-sub-total item">Shipping Charge</th>
+													<th class="cart-total last-item">Grandtotal</th>
+												</tr>
+											</thead><!-- /thead -->
+											<tfoot>
+												<tr>
+													<td colspan="7">
+														<div class="shopping-cart-btn">
+															<span class="">
+																<a href="index.php"
+																	class="btn btn-upper btn-upper outer-left-xs">Continue
+																	Shopping</a>
 
-															<input type="submit" name="submit" value="Update shopping cart"
-																class="btn btn-upper btn-primary pull-right outer-right-xs">
-														</span>
-													</div><!-- /.shopping-cart-btn -->
-												</td>
-											</tr>
-										</tfoot>
-										<tbody>
-											<?php
-											$pdtid = array();
-											$sql = "SELECT * FROM products WHERE id IN(";
-											foreach ($_SESSION['cart'] as $id => $value) {
-												$sql .= $id . ",";
-											}
-											$sql = substr($sql, 0, -1) . ") ORDER BY id ASC";
-											$query = mysqli_query($con, $sql);
-											$totalprice = 0;
-											$totalqunty = 0;
-											if (!empty($query)) {
-												while ($row = mysqli_fetch_array($query)) {
-													$quantity = $_SESSION['cart'][$row['id']]['quantity'];
-													$subtotal = $_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge'];
-													$totalprice += $subtotal;
-													$_SESSION['qnty'] = $totalqunty += $quantity;
-													array_push($pdtid, $row['id']);
+																<input type="submit" name="submit" value="Update shopping cart"
+																	class="btn btn-upper btn-primary pull-right outer-right-xs">
+															</span>
+														</div><!-- /.shopping-cart-btn -->
+													</td>
+												</tr>
+											</tfoot>
+											<tbody>
+												<?php
+													$pdtid = array();
+													$sql = "SELECT * FROM products WHERE id IN(";
+													foreach ($_SESSION['cart'] as $id => $value) {
+														$sql .= $id . ",";
+													}
+													$sql = substr($sql, 0, -1) . ") ORDER BY id ASC";
+													$query = mysqli_query($con, $sql);
+													$totalprice = 0;
+													$totalqunty = 0;
+													if (!empty($query)) {
+														while ($row = mysqli_fetch_array($query)) {
+															$quantity = $_SESSION['cart'][$row['id']]['quantity'];
+															$subtotal = $_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge'];
+															$totalprice += $subtotal;
+															$_SESSION['qnty'] = $totalqunty += $quantity;
+															array_push($pdtid, $row['id']);
+															?>
+																						<tr>
+																							<td class="romove-item"><input type="checkbox" name="remove_code[]"
+																									value="<?php echo htmlentities($row['id']); ?>" /></td>
+																							<td class="cart-image">
+																								<a class="entry-thumbnail" href="detail.html">
+																									<img src="assets/productimages/<?php echo $row['id']; ?>/<?php echo $row['productImage1']; ?>"
+																										alt="" width="114" height="146">
+																								</a>
+																							</td>
+																							<td class="cart-product-name-info">
+																								<h4 class='cart-product-description'><a
+																										href="product-details.php?pid=<?php echo htmlentities($pd = $row['id']); ?>"><?php echo $row['productName'];
+																											 $_SESSION['sid'] = $pd;
+																											 ?></a>
+																								</h4>
+																								<div class="row">
+																									<div class="col-sm-4">
+																										<div class="rating rateit-small"></div>
+																									</div>
+																									<div class="col-sm-8">
+																										<?php $rt = mysqli_query($con, "select * from productreviews where productId='$pd'");
+																										$num = mysqli_num_rows($rt); {
+																											?>
+																															<div class="reviews">
+																																( <?php echo htmlentities($num); ?> Reviews )
+																															</div>
+																										<?php } ?>
+																									</div>
+																								</div><!-- /.row -->
+																							</td>
+																							<td class="cart-product-quantity">
+																								<div class="quant-input">
+																									<div class="arrows">
+																										<div class="arrow plus gradient"><span class="ir"><i
+																													class="icon fa fa-sort-asc"></i></span></div>
+																										<div class="arrow minus gradient"><span class="ir"><i
+																													class="icon fa fa-sort-desc"></i></span></div>
+																									</div>
+																									<input type="text"
+																										value="<?php echo $_SESSION['cart'][$row['id']]['quantity']; ?>"
+																										name="quantity[<?php echo $row['id']; ?>]">
+																								</div>
+																							</td>
+																							<td class="cart-product-sub-total"><span
+																									class="cart-sub-total-price"><?php echo "$" . " " . $row['productPrice']; ?>.00</span>
+																							</td>
+																							<td class="cart-product-sub-total"><span
+																									class="cart-sub-total-price"><?php echo "$" . " " . $row['shippingCharge']; ?>.00</span>
+																							</td>
+																							<td class="cart-product-grand-total"><span
+																									class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge']); ?>.00</span>
+																							</td>
+																						</tr>
+																	<?php }
+													}
+													$_SESSION['pid'] = $pdtid;
 													?>
-													<tr>
-														<td class="romove-item"><input type="checkbox" name="remove_code[]"
-																value="<?php echo htmlentities($row['id']); ?>" /></td>
-														<td class="cart-image">
-															<a class="entry-thumbnail" href="detail.html">
-																<img src="assets/productimages/<?php echo $row['id']; ?>/<?php echo $row['productImage1']; ?>"
-																	alt="" width="114" height="146">
-															</a>
-														</td>
-														<td class="cart-product-name-info">
-															<h4 class='cart-product-description'><a
-																	href="product-details.php?pid=<?php echo htmlentities($pd = $row['id']); ?>"><?php echo $row['productName'];
-																		 $_SESSION['sid'] = $pd;
-																		 ?></a>
-															</h4>
-															<div class="row">
-																<div class="col-sm-4">
-																	<div class="rating rateit-small"></div>
-																</div>
-																<div class="col-sm-8">
-																	<?php $rt = mysqli_query($con, "select * from productreviews where productId='$pd'");
-																	$num = mysqli_num_rows($rt); {
-																		?>
-																		<div class="reviews">
-																			( <?php echo htmlentities($num); ?> Reviews )
-																		</div>
-																	<?php } ?>
-																</div>
-															</div><!-- /.row -->
-														</td>
-														<td class="cart-product-quantity">
-															<div class="quant-input">
-																<div class="arrows">
-																	<div class="arrow plus gradient"><span class="ir"><i
-																				class="icon fa fa-sort-asc"></i></span></div>
-																	<div class="arrow minus gradient"><span class="ir"><i
-																				class="icon fa fa-sort-desc"></i></span></div>
-																</div>
-																<input type="text"
-																	value="<?php echo $_SESSION['cart'][$row['id']]['quantity']; ?>"
-																	name="quantity[<?php echo $row['id']; ?>]">
-															</div>
-														</td>
-														<td class="cart-product-sub-total"><span
-																class="cart-sub-total-price"><?php echo "$" . " " . $row['productPrice']; ?>.00</span>
-														</td>
-														<td class="cart-product-sub-total"><span
-																class="cart-sub-total-price"><?php echo "$" . " " . $row['shippingCharge']; ?>.00</span>
-														</td>
-														<td class="cart-product-grand-total"><span
-																class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge']); ?>.00</span>
-														</td>
-													</tr>
-												<?php }
-											}
-											$_SESSION['pid'] = $pdtid;
-											?>
-										</tbody><!-- /tbody -->
-									</table><!-- /table -->
+											</tbody><!-- /tbody -->
+										</table><!-- /table -->
+
+										<div class="checkout">
+										<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>
+					
+						<div class="cart-grand-total">
+							Grand Total<span class="inner-left-md"><?php echo $_SESSION['tp'] = "$totalprice" . ".00"; ?></span>
+						</div>
+					</th>
+				</tr>
+			</thead><!-- /thead -->
+			<tbody>
+					<tr>
+						<td>
+							<div class="cart-checkout-btn pull-right">
+								<button type="submit" name="ordersubmit" class="btn btn-primary">PROCCED TO CHEKOUT</button>
+						
+							</div>
+						</td>
+					</tr>
+			</tbody><!-- /tbody -->
+		</table>
+										</div>
 								<?php } else {
 									echo "Your shopping Cart is empty";
 								} ?>
