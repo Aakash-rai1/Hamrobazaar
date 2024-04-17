@@ -140,11 +140,11 @@ INSERT INTO `products` (`id`, `category`, `subCategory`, `productName`, `product
 (1, 8, 15, 'iphone 15', 'Apple', 1800, 2000, 'apple', 'iphone15a.jpg', 'iphone-15-pro.jpeg', 'iphone15a.jpg', 10, 'In Stock'),
 (38, 10, 19, 'Kyrie 3', 'Nike', 90, 120, 'Third shoe of Kyrie Irving Signature shoe series', 'kyriewhite.jpg', 'samurai.jpg', 'flame.jpg', 20, 'In Stock'),
 (39, 10, 19, 'Chuck 70 Vintage', 'Converse', 90, 130, 'Old School Converse', 'black.jpg', 'white.jpg', 'black.jpg', 20, 'In Stock'),
-(40, 8, 16, 'Acer Nitro 5 2024', 'Acer', 1600, 1500, 'The latest budget gaming series from acer', 'v1.jpg', 'v2.jpg', 'v3.jpg', 20, 'In Stock'),
+(40, 8, 16, 'Acer Nitro 5 2024', 'Acer', 1600, 1500, 'The latest budget gaming series from acer', 'nitro1.jpg', 'nitro2.jpg', 'nitro3.jpg', 20, 'In Stock'),
 (41, 8, 17, 'Samsung Neo QLED 8k', 'Samsung', 2550, 2650, 'Experience 8K experience', 'led2.jpg', 'led1.jpg', 'led3.jpg', 20, 'In Stock'),
 (42, 8, 16, 'Alienware Gaming', 'Alienware', 2600, 3200, 'Midrange gaming laptop', 'a1.jpg', 'a2.jpg', 'a3.jpg', 20, 'In Stock'),
 (43, 7, 14, 'Ikigai', 'ikigai', 60, 50, ' explores the Japanese concept of finding ones purpose in life by analyzing the habits and beliefs of the worlds longest-living people.', 'ikigai.jpg', 'ikigai2.jpg', 'ikigai3.jpeg', 5, 'In Stock'),
-(2, 7, 14, 'Rich Dad Poor Dad', 'Robert Kiyosaki', 20, 25, ' How the rich earn.', 'richdad.jpg', 'richdad1.jpg', 'richdad.jpeg', 5, 'In Stock'),
+(2, 7, 14, 'Rich Dad Poor Dad', 'Robert Kiyosaki', 20, 25, ' How the rich earn.', 'richdad.jpg', 'richdad1.jpg', 'richdad.jpg', 5, 'In Stock'),
 (18, 9, 18, 'Bed', 'Ikea', 180, 200, 'Ikea Bed.', 'bed1.jpeg', 'bed2.jpeg', 'bed3.jpeg', 5, 'In Stock'),
 (3, 9, 18, 'Cedar table', 'Ikea', 250, 320, 'Sturdy and attractive.', 'ikea1.jpg', 'ikea2.jpg', 'ikea.jpeg', 5, 'In Stock');
 
